@@ -1,0 +1,328 @@
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #1f1f1f;
+  --text-light: #333;
+  --text-dark: #eee;
+  --accent: #0077ff;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: all 0.3s ease-in-out;
+  cursor: url('https://cdn-icons-png.flaticon.com/512/892/892634.png') 16 16, auto;
+}
+
+.dark-mode {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--accent);
+  padding: 1rem 2rem;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding-left: 0;
+}
+
+.nav-links a,
+#theme-toggle {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links a:hover,
+#theme-toggle:hover {
+  background-color: #a8d0f0;
+  color: #000;
+  transform: scale(1.1);
+}
+
+
+
+
+/* ===== Hero Section ===== */
+.hero {
+  text-align: center;
+  padding: 2rem;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ===== Section General ===== */
+section {
+  padding: 2rem;
+}
+
+/* ===== Skills List ===== */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+.skills-list li {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ===== Form Styles ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  padding: 0.5rem 1rem;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #a8d0f0;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.cv-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 0 2rem;
+  flex-wrap: wrap;
+}
+
+.cv-btn {
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--accent);
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  text-align: center;
+}
+
+.cv-btn:hover {
+  background-color: #6eb9ff;
+  transform: scale(1.05) translateY(-2px);
+  color: black;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .cv-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .left-btn,
+  .right-btn {
+    align-self: auto;
+  }
+}
+
+
+/* ===== Social Links ===== */
+.socials a {
+  margin-right: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--accent);
+  color: white;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero {
+    padding: 1.5rem;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+#resume {
+  background-color: #f2f9ff;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+#resume h2 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.resume-section h3 {
+  color: var(--accent);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-section p, 
+.resume-section ul {
+  margin: 0.2rem 0 1rem;
+  line-height: 1.6;
+}
+
+.resume-section ul {
+  padding-left: 1.2rem;
+}
+
+.resume-section li {
+  margin-bottom: 0.5rem;
+}
+
+
+.dark-mode #resume {
+  background: linear-gradient(to bottom, #1c1c2b, #1f2633);
+  color: #f0f0f0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.dark-mode #resume h2,
+.dark-mode .resume-section h3 {
+  color: #6eb9ff;
+}
+
+
+/* 🎇 Live Colorful Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb, #fbc2eb, #a6c1ee);
+  background-size: 600% 600%;
+  animation: brightFlow 20s ease infinite;
+  opacity: 0.25;
+  z-index: -1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Dark Mode override with stronger blend */
+.dark-mode::before {
+  opacity: 0.15;
+  mix-blend-mode: lighten;
+}
+
+@keyframes brightFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 🎨 লাইভ ব্যাকগ্রাউন্ড অ্যানিমেশন */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb, #fbc2eb, #a6c1ee);
+  background-size: 600% 600%;
+  animation: brightFlow 20s ease infinite;
+  opacity: 0.25;
+  z-index: -1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* 🌙 ডার্ক মোডে ব্যাকগ্রাউন্ড অ্যানিমেশন */
+.dark-mode::before {
+  opacity: 0.15;
+  mix-blend-mode: lighten;
+}
+
+@keyframes brightFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
