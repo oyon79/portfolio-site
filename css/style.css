@@ -67,12 +67,31 @@ body {
   padding: 2rem;
 }
 
-.profile-img {
-  width: 160px;
-  height: 160px;
+/* 🔵 Standard Circular Pic */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* 🌀 Hover এ Border Glow Animation */
+.profile-pic:hover {
+  box-shadow: 0 0 25px rgba(0, 136, 255, 0.8);
+  border-color: #0088ff;
+}
+
+/* 🔍 Zoomed Class */
+.profile-pic.zoomed {
+  transform: scale(1.5);
+  z-index: 999;
+  position: relative;
 }
 
 /* ===== Section General ===== */
@@ -159,29 +178,7 @@ form button:hover {
   color: black;
 }
 
-/* Responsive layout for smaller screens */
-@media (max-width: 768px) {
-  .cv-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 0;
-  }
 
-  .left-btn,
-  .right-btn {
-    align-self: auto;
-  }
-}
-
-
-/* ===== Social Links ===== */
-.socials a {
-  margin-right: 1rem;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
 
 /* ===== Footer ===== */
 footer {
@@ -209,48 +206,65 @@ footer {
 }
 
 #resume {
-  background-color: #f2f9ff;
-  padding: 2rem;
-  border-radius: 10px;
-  margin-bottom: 2rem;
+  background: #f9f9f9;
+  padding: 3rem 1rem;
 }
 
 #resume h2 {
   text-align: center;
-  color: var(--accent);
-  margin-bottom: 1.5rem;
+  color: var(--accent, #0077ff);
+  margin-bottom: 2rem;
 }
 
-.resume-section h3 {
-  color: var(--accent);
-  margin-top: 1rem;
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.resume-card {
+  background: #ffffff;
+  border-left: 5px solid var(--accent, #0077ff);
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resume-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.resume-card h3 {
   margin-bottom: 0.5rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3rem;
 }
 
-.resume-section p, 
-.resume-section ul {
-  margin: 0.2rem 0 1rem;
+.resume-card p, .resume-card ul {
+  margin: 0.5rem 0 0;
+  color: #555;
+  font-size: 0.95rem;
   line-height: 1.6;
 }
 
-.resume-section ul {
+.resume-card ul {
   padding-left: 1.2rem;
 }
 
-.resume-section li {
-  margin-bottom: 0.5rem;
-}
-
-
 .dark-mode #resume {
   background: linear-gradient(to bottom, #1c1c2b, #1f2633);
-  color: #f0f0f0;
+  color: #0c85a0;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .dark-mode #resume h2,
 .dark-mode .resume-section h3 {
-  color: #6eb9ff;
+  color: #0d7ae1;
 }
 
 
@@ -325,4 +339,207 @@ body::before {
 }
 
 
+#typewriter {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #222;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
+/* Cursor blink animation */
+.cursor {
+  display: inline-block;
+  animation: blink 0.7s steps(1) infinite;
+  color: #0077ff;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+#typed-text {
+  background: linear-gradient(90deg, #ff4d4d, #4d79ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+
+
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 0 15px transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Glowing effect */
+.social-btn:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
+}
+
+/* Brand background */
+.github {
+  background-color: #333;
+}
+
+.github:hover {
+  background-color: #6e5494;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.linkedin:hover {
+  background-color: #005f8d;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.facebook:hover {
+  background-color: #2d4373;
+}
+
+/* Tooltip */
+.social-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+#theme-toggle {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+/* Tooltip */
+#theme-toggle::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+#theme-toggle:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .intro {
+    padding: 2rem 1rem;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  h1, h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .skills-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form {
+    padding: 0 1rem;
+  }
+
+  .social-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .cv-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  #typewriter {
+    font-size: 1.2rem;
+  }
+}

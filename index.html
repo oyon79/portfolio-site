@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-m6D2t++K..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- ✅ AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
@@ -19,7 +21,7 @@
         <li><a href="#resume">Resume</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><button id="theme-toggle">🌗</button></li>
+        <li><button id="theme-toggle" data-tooltip="Theme">🌗</button></li>
       </ul>
     </nav>
   </header>
@@ -31,55 +33,64 @@
 </div>
 
 
-    <img src="img/profile.jpg" alt="Profile photo of Oyon" class="profile-img" />
-    <h2>Hlw, I'm Sahriar — Welcome to my Portfolio website</h2>
+    <img src="img/profile.jpg" alt="Profile photo of Oyon" class="profile-pic zoomable" title="Click to zoom" onclick="toggleZoom()" />
+    <h2 id="typewriter"><span id="typed-text"></span><span class="cursor">|</span></h2>
     <p>Student | Web Developer | UI/UX Designer</p>
   </section>
 
   <section id="about" data-aos="fade-left">
     <h2>About Me</h2>
-    <p>Hello, I am Oyon,I am a student of UIU, Dept. of CSE. I am a professional web developer.</p>
+    <p>Hi, I am Sahriar (Oyon). I am a student of UIU, Department of CSE. I am a professional web developer. You can know everything about me on this portfolio website.</p>
     <p>Location: Dhaka, Bangladesh</p>
   </section>
 
-  <section id="resume" data-aos="fade-up">
+
+<section id="resume">
   <h2>Resume</h2>
+  <div class="resume-grid">
+    
+    <div class="resume-card">
+      <h3>Summary</h3>
+      <p>I am Md. Sahriar Hossain (Oyon), I am a Computer Science and Engineering Background student with expertise in HTML, CSS, JavaScript, C, C++, MySQL and PHP.</p>
+    </div>
 
-  <div class="resume-section">
-    <h3>Summary</h3>
-    <p>I am Md. Sahriar Hossain (Oyon), a student with expertise in HTML, CSS, JavaScript, C, C++, and PHP.</p>
+    <div class="resume-card">
+      <h3>Education</h3>
+      <p><strong>United International University</strong><br>BSc in CSE (2022–2026)<br>CGPA: Not given</p>
+    </div>
 
-    <h3>Education</h3>
-    <p><strong>United International University</strong><br>
-    BSc in Computer Science and Engineering (2022–2026)<br>
-    CGPA: Not Given </p>
+    <div class="resume-card">
+      <h3>Education</h3>
+      <p><strong>Tamirul Millat Kamil Madrasah,Tongi</strong><br>HSC (Alim)-Science 2021<br>GPA: 5.00 (Golden A+)</p>
+    </div>
 
-    <p><strong>Tamirul Millat Kamil Madrasah,Tongi</strong><br>
-    HSC (Alim)-Science (2019–2021)<br>
-    GPA: 5.00 (Golden A+)</p>
+    <div class="resume-card">
+      <h3>Education</h3>
+      <p><strong>Sonagazi Islamia Kamil Madrasah, Sonagazi, Feni</strong><br>SSC (Dakhil)-Science 2019<br>GPA: 4.61</p>
+    </div>
 
-    <p><strong>Sonagazi Islamia Kamil Madrasah, Sonagazi,Feni</strong><br>
-    SSC (Dakhil)-Science (2017–2019)<br>
-    GPA: 4.61</p>
+    <div class="resume-card">
+      <h3>Certifications</h3>
+      <ul>
+        <li><strong>FREELANCING FOR ALL</strong> — GP Academy (2023)</li>
+        <li><strong>TIPS & TECHNIQUES ON INTERVIEW & ASSESSMENT CENTRE</strong> — GP Academy (2024)</li>
+      </ul>
+    </div>
 
-    <h3>Certifications</h3>
-    <ul>
-      <li><strong>FREELANCING FOR ALL</strong> – GP Academy (2023)</li>
-      <li><strong>TIPS & TECHNIQUES ON INTERVIEW & ASSESSMENT CENTRE</strong> – GP Academy (2023)</li>
-    </ul>
+    <div class="resume-card">
+      <h3>Languages</h3>
+      <ul>
+        <li>Bengali – Native</li>
+        <li>English – Fluent</li>
+        <li>Arabic – Basic</li>
+      </ul>
+    </div>
 
-    <h3>Languages</h3>
-    <ul>
-      <li>Bengali – Native</li>
-      <li>English – Fluent</li>
-      <li>Arabic – Basic</li>
-    </ul>
+    <div class="resume-card">
+      <h3>Hobbies</h3>
+      <p>Exploring and building websites, Traveling the world.</p>
+    </div>
 
-    <h3>Hobbies</h3>
-    <ul>
-      <li>Exploring and creating new websites</li>
-      <li>Traveling the whole world</li>
-    </ul>
   </div>
 </section>
 
@@ -108,13 +119,19 @@
 </form>
 
 
-    <div class="socials">
-      <a href="https://github.com/oyon79" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/md-sahriar-hossain-671545255/" target="_blank">LinkedIn</a>
-      <a href="https://www.facebook.com/md.sahriar.985628" target="_blank">Facebook</a>
-      <p>Email: mdsahriar24179@gmail.com</p>
-      <p>Phone: +8801856724179</p>
-    </div>
+    <div class="social-buttons">
+  <a href="https://github.com/oyon79" class="social-btn github" target="_blank" data-tooltip="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/md-sahriar-hossain-671545255/" class="social-btn linkedin" target="_blank" data-tooltip="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://www.facebook.com/md.sahriar.985628" class="social-btn facebook" target="_blank" data-tooltip="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+</div>
+
+
   </section>
 
   <footer>
